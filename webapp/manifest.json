@@ -131,7 +131,7 @@
                       "visible": true,
                       "enabled": true,
                       "requiresSelection": false,
-                      "text": "Upload Data (UI5)"
+                      "text": "{i18n>uploadDataUi5}"
                     }
                   }
                 }

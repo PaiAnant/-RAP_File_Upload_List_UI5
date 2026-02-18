@@ -13,35 +13,36 @@
                         <PropertyValue Property="Data">
                             <Collection>
                                 <Record Type="UI.DataField">
-                                    <PropertyValue Property="Label" String="LineNum"/>
+                                    <PropertyValue Property="Label" String="{@i18n>line}"/>
                                     <PropertyValue Property="Value" Path="LineNum"/>
                                 </Record>
                                 <Record Type="UI.DataField">
-                                    <PropertyValue Property="Label" String="PoNumber"/>
+                                    <PropertyValue Property="Label" String="{@i18n>poNumber}"/>
                                     <PropertyValue Property="Value" Path="PoNumber"/>
                                 </Record>
                                 <Record Type="UI.DataField">
-                                    <PropertyValue Property="Label" String="PoItem"/>
+                                    <PropertyValue Property="Label" String="{@i18n>poItem}"/>
                                     <PropertyValue Property="Value" Path="PoItem"/>
                                 </Record>
                                 <Record Type="UI.DataField">
-                                    <PropertyValue Property="Label" String="GrUantity"/>
+                                    <PropertyValue Property="Label" String="{@i18n>quantity}"/>
                                     <PropertyValue Property="Value" Path="GrUantity"/>
                                 </Record>
                                 <Record Type="UI.DataField">
-                                    <PropertyValue Property="Label" String="UnitOfMeasure"/>
+                                    <PropertyValue Property="Label" String="{@i18n>uom}"/>
                                     <PropertyValue Property="Value" Path="UnitOfMeasure"/>
                                 </Record>
                                 <Record Type="UI.DataField">
-                                    <PropertyValue Property="Label" String="SiteId"/>
+                                    <PropertyValue Property="Label" String="{@i18n>siteId}"/>
                                     <PropertyValue Property="Value" Path="SiteId"/>
                                 </Record>
                                 <Record Type="UI.DataField">
-                                    <PropertyValue Property="Label" String="HeaderText"/>
+                                    <PropertyValue Property="Label" String="{@i18n>headerText}"/>
                                     <PropertyValue Property="Value" Path="HeaderText"/>
                                 </Record>
                                 <Record Type="UI.DataField">
                                     <PropertyValue Property="Value" Path="LocalLastChangedAt"/>
+                                    <PropertyValue Property="Label" String="{@i18n>changedOn}"/>
                                 </Record>
                             </Collection>
                         </PropertyValue>
@@ -51,8 +52,54 @@
                     <Collection>
                         <Record Type="UI.ReferenceFacet">
                             <PropertyValue Property="ID" String="GeneratedFacet1"/>
-                            <PropertyValue Property="Label" String="General Information"/>
+                            <PropertyValue Property="Label" String="{@i18n>generalInformation}"/>
                             <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#GeneratedGroup"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{@i18n>line}"/>
+                            <PropertyValue Property="Value" Path="LineNum"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{@i18n>poNumber}"/>
+                            <PropertyValue Property="Value" Path="PoNumber"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{@i18n>poItem}"/>
+                            <PropertyValue Property="Value" Path="PoItem"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{@i18n>lastUsedAt}"/>
+                            <PropertyValue Property="Value" Path="LocalLastChangedAt"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{@i18n>quantity}"/>
+                            <PropertyValue Property="Value" Path="GrUantity"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{@i18n>uom}"/>
+                            <PropertyValue Property="Value" Path="UnitOfMeasure"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{@i18n>siteId}"/>
+                            <PropertyValue Property="Value" Path="SiteId"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="{@i18n>headerText}"/>
+                            <PropertyValue Property="Value" Path="HeaderText"/>
+                        </Record>
+                        <Record Type="UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="{@i18n>downloadTemplate}"/>
+                            <PropertyValue Property="Action" String="com.sap.gateway.srvd.zsrv_upload_list.v0001.downloadTemplate(Collection(com.sap.gateway.srvd.zsrv_upload_list.v0001.ListType))"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                        <Record Type="UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="{@i18n>uploadDataRAP}"/>
+                            <PropertyValue Property="Action" String="com.sap.gateway.srvd.zsrv_upload_list.v0001.ExcelUpload(Collection(com.sap.gateway.srvd.zsrv_upload_list.v0001.ListType))"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated"/>
                         </Record>
                     </Collection>
                 </Annotation>
