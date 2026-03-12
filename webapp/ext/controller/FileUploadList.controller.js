@@ -40,7 +40,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 		},
 
 		onUploadPressFromUI5: function () {
-                 this._openUploadDialog();
+			this._openUploadDialog();
 		},
 
 		_downloadTemplate: function () {
@@ -98,8 +98,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 				this.getView().getModel().refresh();
 				sap.m.MessageToast.show("Upload successful");
 			} catch (e) {
-				console.error(e);
-				sap.m.MessageBox.error("Upload failed. Check console / backend messages.");
+				sap.m.MessageBox.error(e.error.message);
 			}
 
 		},
@@ -123,6 +122,14 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 			oOp.setParameter("FileName", fileName);
 			oOp.setParameter("MimeType", mimeType);
 			oOp.setParameter("FileBase64", base64);
+			// const oOp = oModel.bindContext("/List/com.sap.gateway.srvd.zsrv_upload_list.v0001." + "ExcelUpload(...)");
+			// oOp.setParameter("dummy", true);
+			// var oStreamProperties = {"FileName":fileName, "MimeType":mimeType,"FileBase64":base64 }
+			// var aStreamProperties = [];
+
+			// aStreamProperties.push(oStreamProperties);
+
+			// oOp.setParameter("_StreamProperties", aStreamProperties);
 			await oOp.execute();               // backend call happens here
 			return oOp.getBoundContext();      // optional: read result if action returns something
 
